@@ -1,0 +1,29 @@
+﻿<Window x:Class="ekz2.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ekz2"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="177" VerticalAlignment="Top" Width="454">
+            <TabItem Header="Customer">
+                <StackPanel Orientation="Horizontal">
+                    <DataGrid x:Name="Customers" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="419" Width="Auto" VerticalAlignment="Top" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}" />
+                    <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"  Command="{Binding DeleteCustomersCommand}"/>
+                    <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"  Command="{Binding EditCustomersCommand}"/>
+                    <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"  Command="{Binding AddCustomersCommand}"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Diagnosis">
+                <StackPanel Orientation="Horizontal">
+                    <DataGrid x:Name="Diagnosis" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="419" Width="Auto" VerticalAlignment="Top" ItemsSource="{Binding Diagnosis}" SelectedItem="{Binding Path = SelectedDiagnos,Mode=TwoWay}" />
+                    <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"  Command="{Binding DeleteDiagnosCommand}"/>
+                    <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"  Command="{Binding EditDiagnosisCommand}"/>
+                    <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"  Command="{Binding AddDiagnosisCommand}"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
